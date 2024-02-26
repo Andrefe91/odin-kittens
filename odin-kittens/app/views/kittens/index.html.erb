@@ -1,0 +1,22 @@
+<div>
+    <h1>Kittens list !!</h1>
+    <h3>Kittens, all the kittens...</h3>
+</div>
+
+<ul>
+    <% @kittens.each do |kitten| %>
+        <li>
+            <p><strong>Name:</strong> <%= kitten.name %></p>
+            <p><strong>Age:</strong> <%= kitten.age %></p>
+            <p><strong>Cuteness:</strong> <%= kitten.cuteness %></p>
+            <p><strong>Softness:</strong> <%= kitten.softness %></p>
+            <%= link_to "[Show]", kitten_path(kitten) %>
+            <%= link_to "[Edit]", edit_kitten_path(kitten) %>
+            <%= form_tag kitten_path(kitten), method: :delete do %>
+                <%= button_to "[Delete Kitten]"  %>
+            <% end %>
+        </li>
+    <% end %>
+</ul>
+
+<%= link_to "[Add New Kitten]", new_kitten_path %>
