@@ -1,2 +1,18 @@
-<h1>Kittens#edit</h1>
-<p>Find me in app/views/kittens/edit.html.erb</p>
+<% if @kitten.errors.any? %>
+    <p>There are some errors in the form: </p>
+    <ul>
+        <% @kitten.errors.full_messages.each do |message| %>
+            <li>
+                <%= message %>
+            </li>
+        <% end %>
+    </ul>
+<% end %>
+
+
+<h2>
+    Edit your kitten !! What changed?
+</h2>
+
+<%= render "form", kitten: @kitten %>
+

@@ -1,0 +1,23 @@
+<br>
+
+<div>
+    <%= form_with model: @kitten do |form| %>
+        <%= form.label :name %>
+        <%= form.text_field :name  %>
+
+        <%= form.label :age %>
+        <%= form.number_field :age, in: 0.0..35.0, step: 0.1 %>
+
+        <%= form.label :cuteness %>
+        <%= form.range_field :cuteness, in: 1..100 %>
+
+        <%= form.label :softness %>
+        <%= form.range_field :softness, in: 1..100 %>
+
+        <br><br>
+        <%= form.submit %>
+    <% end %>
+</div>
+
+<br>
+<%= link_to "[Home Page]", root_path %>

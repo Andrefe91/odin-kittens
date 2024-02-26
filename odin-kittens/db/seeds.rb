@@ -10,3 +10,5 @@
 
 Kitten.create(name: "Lucas", age: 5, cuteness: 2, softness: 1)
 Kitten.create(name: "Gato", age: 3, cuteness: 0, softness: 0)
+
+puts "Seeding completed successfully"
